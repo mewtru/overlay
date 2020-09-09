@@ -1,38 +1,66 @@
+html, body {
+  margin: 0;
+}
+
 .App {
-  text-align: center;
+  display:flex;
+  background: linear-gradient(#FFDDE1, #EE9CA7);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cols {
+  display:flex;
+  flex-direction:column;
+
+  animation-name: goUp;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cols:nth-child(odd) {
+  animation-direction: reverse;
+}
+
+@keyframes goUp {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.title-container {
+
+  display:flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+
+  height: 100%;
+  width:100%;
+
+
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: 40;
+
+}
+.title {
+  font-family: "Lato";
+  font-weight: bold;
+
+
   color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+  font-size: 250px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 10px 30px 30px 30px;
+
+  background-color: rgba(238, 156, 167, 0.6);
+  backdrop-filter: blur(10px);
+
+
 }
